@@ -1,0 +1,145 @@
+* {
+  font-family: "Crowd";
+}
+@font-face {
+  font-family: "Crowd";
+  src: local("Crowd"), url("./components/fonts/Crowd.ttf") format("truetype");
+}
+.wrapper {
+  /* background-image: url("./images/backGround.png"); */
+  padding: 5%;
+  margin-top: -1.99%;
+  margin-bottom: 20%;
+  display: flex;
+  flex-direction: column;
+  height: 230vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form {
+  display: flex;
+  background-color: black;
+  width: 100%;
+}
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 68%;
+  height: 170vh;
+
+  /* margin-left: 30%; */
+  /* background-image: url("./images/notes-music-sound-treble-clef-wallpaper-preview.jpg"); */
+  border-radius: 9%;
+  margin-top: 7%;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-left: 25%; */
+  box-shadow: rgb(105, 97, 97);
+  /* background-image: url("./images/backGround.png"); */
+}
+
+.heartContainer {
+  display: flex;
+}
+.heart {
+  font-size: 1rem;
+  height: 1vh;
+  position: relative;
+  top: -10vh;
+  left: 48.5vw;
+  margin-top: 8.5%;
+  margin-bottom: -2%;
+  color: yellow;
+}
+
+.heartCluster {
+  font-size: 7.8rem;
+  height: 1vh;
+  position: relative;
+  top: -60px;
+  left: 49vw;
+  margin-top: 8.5%;
+  margin-bottom: -2%;
+}
+
+.heart:hover {
+  /* color: rgb(182, 36, 36); */
+  /* cursor: grab; */
+  /* transform: scale(103%); */
+  transition: 30s;
+}
+
+.heartCluster:hover {
+  cursor: grab;
+  /* transform: rotate(360deg); */
+  transition: 1s;
+}
+
+.input {
+  margin-top: 2%;
+  margin-right: 2%;
+  border-radius: 4%;
+  text-align: center;
+  border: none;
+  background-color: rgb(94, 85, 85);
+  color: white;
+  width: 35%;
+  height: 55%;
+  place-content: inherit;
+  font-size: 1.5vw;
+  margin-left: 2%;
+  margin-right: 0%;
+}
+.click {
+  margin-top: 2%;
+  width: 35%;
+  height: 57%;
+  background-color: rgb(94, 85, 85);
+  font-size: 3vh;
+  border-radius: 4%;
+  color: rgb(134, 131, 131);
+  margin-left: 2%;
+  margin-right: 2%;
+  border: none;
+}
+
+.searchInterface {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0%;
+  margin-top: 4%;
+  margin-bottom: -2%;
+  height: 12vh;
+  width: 100%;
+  text-align: center;
+}
+
+#player {
+  border-radius: 9%;
+  width: 100px;
+}
+
+.favorites-app {
+  width: 100%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 9%;
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  /* margin: 5vw; */
+  font-size: 5vw;
+}
+
+h2 {
+  margin-bottom: 10vh;
+  font-size: 5vw;
+  background-color: black;
+  color: grey;
+  height: 15vh;
+}

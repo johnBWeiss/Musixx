@@ -1,0 +1,73 @@
+.Tester {
+  color: white;
+}
+
+.favHeadLine {
+  font-size: 14vh;
+  color: crimson;
+  text-align: center;
+  margin-right: 7vw;
+  margin-left: 8vw;
+  margin-top: 5vh;
+  padding-top: 5%;
+  margin-bottom: 3%;
+}
+
+.FavoritesPageWrapper {
+  /* padding: 2%; */
+  /* margin-bottom: 20%; */
+  /* background-image: url("../../images/"); */
+  display: flex;
+  flex-direction: column;
+  height: 270vh;
+  padding-top: 3%;
+  /* width: 96.8vw; */
+  /* margin-left: -2%; */
+  background-repeat: repeat-y;
+  /* margin-right: auto; */
+}
+
+.Container {
+  width: 22vw;
+  /* display: grid; */
+  margin-left: 20vw;
+  margin-right: 20vw;
+  font-size: 5vh;
+  margin-bottom: 175vh;
+}
+
+/* span {
+  display: flex;
+  font-size: 7vh;
+} */
+p {
+  font-size: 3.5vh;
+  color: rgb(0, 0, 0);
+}
+
+.removeFavoriteTitle {
+  margin-top: 13%;
+  margin-bottom: 10%;
+  margin-left: -11%;
+  font-size: 2.15rem;
+}
+
+.removeFavoriteTitle:hover {
+  margin-top: 13%;
+  margin-bottom: 10%;
+  margin-left: -11%;
+  font-size: 2.15rem;
+  color: crimson;
+  cursor: pointer;
+}
+
+.favoriteListItem {
+  height: 10vh;
+  width: 25vw;
+}
+
+.seperator {
+  width: 3vw;
+  font-size: 2vw;
+  background-color: blue;
+}

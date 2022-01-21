@@ -1,0 +1,131 @@
+.credentialsInterface {
+  display: flex;
+  /* position: relative;
+  left: -19vw;
+  width: 20vw; */
+}
+
+.signUp {
+  margin-left: 1%;
+  display: flex;
+  flex-direction: column;
+  color: crimson;
+  position: relative;
+  top: 3vh;
+  width: 15vw;
+  font-size: 3vh;
+  margin-bottom: 1%;
+  margin-top: 3%;
+  text-align: center;
+}
+
+.Login {
+  margin-left: 1%;
+  display: flex;
+  flex-direction: column;
+  color: crimson;
+  position: relative;
+  top: 3vh;
+  width: 15vw;
+  font-size: 3vh;
+  margin-bottom: 1%;
+  margin-top: 3%;
+  text-align: center;
+}
+
+.LoginMenu {
+  margin-left: 9.5%;
+  display: flex;
+  flex-direction: column;
+  color: crimson;
+  position: relative;
+  top: 8vh;
+  width: fit-content;
+}
+
+::placeholder {
+  color: rgb(71, 64, 64);
+  font-size: 2vw;
+}
+
+.userName {
+  color: blue;
+}
+
+.usernameInput {
+  color: rgb(0, 0, 0);
+  width: 16vw;
+  height: 6vh;
+  margin-bottom: 4%;
+  border-radius: 7%;
+  border: none;
+  text-align: center;
+  font-size: 2vw;
+  background-color: rgb(153, 76, 70);
+  position: relative;
+  left: 2vw;
+}
+.passwordInput {
+  color: rgb(0, 0, 0);
+  width: 16vw;
+  height: 6vh;
+  margin-bottom: 4%;
+  border-radius: 7%;
+  border: none;
+  text-align: center;
+  font-size: 2vw;
+  background-color: rgb(153, 76, 70);
+  position: relative;
+  left: 2vw;
+}
+
+.userLogged {
+  color: white;
+  position: relative;
+  top: 15%;
+  left: 15.5%;
+  font-size: 2em;
+  width: 18vw;
+  height: fit-content;
+  margin-right: 0%;
+  padding: 0%;
+  display: inline-block;
+  flex-wrap: wrap;
+  overflow-x: auto;
+}
+
+.connect {
+  font-size: 1.2em;
+  color: rgb(170, 126, 166);
+  position: relative;
+  left: 6.7vw;
+  top: 5vh;
+}
+
+.connect:hover {
+  color: brown;
+  cursor: pointer;
+}
+
+.logOut {
+  font-size: 1.2em;
+  color: aqua;
+  position: relative;
+  left: 8vw;
+  top: 5vh;
+}
+
+.registerAndSignIn {
+  display: flex;
+  position: relative;
+  left: 3vw;
+  color: white;
+}
+
+.register {
+  margin-right: 23%;
+}
+
+.register:hover {
+  color: white;
+}

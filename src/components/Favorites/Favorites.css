@@ -1,0 +1,11 @@
+.FavoritesPreview {
+  margin: 1.5%;
+  padding: 1%;
+  background-color: black;
+  /* padding: 1%; */
+  border-radius: 9%;
+  /* width: 100vw; */
+
+  /* height: 90%; */
+  overflow: hidden;
+}

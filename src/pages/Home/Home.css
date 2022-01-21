@@ -1,0 +1,233 @@
+* {
+  font-family: "Crowd";
+}
+@font-face {
+  font-family: "Crowd";
+  src: local("Crowd"),
+    url("../../components/fonts/Crowd.ttf") format("truetype");
+}
+.wrapper {
+  /* padding-top: 5%; */
+  padding-right: 0%;
+  padding-left: 0%;
+  margin-top: -1.99%;
+  width: 100%;
+  /* margin-bottom: 20%; */
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../images/backGround.jpg");
+
+  /* width: 89vw; */
+  margin-left: auto;
+  background-repeat: repeat;
+  margin-right: auto;
+}
+
+form {
+  display: flex;
+  background-color: black;
+  width: 100%;
+}
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 220vh;
+  padding-bottom: 2%;
+  /* margin-left: 30%; */
+  background-image: url("../../images/App.jpg");
+  border-radius: 9%;
+  margin-top: 11%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 9%;
+  /* margin-left: 25%; */
+  box-shadow: rgb(105, 97, 97);
+  /* background-image: url("./images/backGround.png"); */
+}
+
+.AppLogin {
+  position: fixed;
+  left: -5vw;
+  top: 25vh;
+  width: 40vw;
+  height: 20vh;
+  display: inline-block;
+  /* margin-bottom: 30%; */
+}
+
+.heartContainer {
+  display: flex;
+  margin-top: 2%;
+  margin-bottom: 1.5%;
+}
+.heart {
+  font-size: 12.5vh;
+  height: 0.6em;
+  /* width: 4%; */
+  position: relative;
+  top: -1vh;
+  left: 47.5vw;
+  margin-top: 3.5%;
+  color: rgb(207, 25, 25);
+}
+
+.heartCluster {
+  height: 0.5em;
+  position: relative;
+  top: 3.5vh;
+  left: 49.5vw;
+  margin-top: 0%;
+  margin-bottom: -2%;
+}
+
+.heart:hover {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transform: rotate(360deg);
+  transition: 1s;
+}
+
+.heartCluster:hover {
+  color: white;
+  cursor: grab;
+  transform: rotate(360deg);
+  transition: 1s;
+}
+
+.input {
+  margin-top: 2%;
+  margin-right: 2%;
+  border-radius: 4%;
+  text-align: center;
+  border: none;
+  background-color: rgb(61, 18, 18);
+  color: white;
+  width: 50%;
+  transition: width 0.1s;
+  transition: margin-left 0.1s;
+
+  height: 85%;
+  place-content: inherit;
+  font-size: 1.5vw;
+  margin-left: 20.5%;
+
+  margin-right: 0%;
+  /* box-shadow: 0 0 25px 0px crimson; */
+}
+
+.input:hover {
+  margin-top: 2%;
+  margin-right: 2%;
+  border-radius: 4%;
+  text-align: center;
+  border: none;
+  background-color: rgb(49, 11, 11);
+  color: white;
+  margin-left: 9%;
+  /* transition: margin-left 5.5s; */
+  transition: all 0.2s ease-in-out;
+
+  width: 70%;
+  /* transition: width 5.5s linear; */
+  height: 85%;
+  place-content: inherit;
+  font-size: 1.5vw;
+
+  margin-right: 0%;
+  box-shadow: 0 0 25px 0px rgb(238, 9, 55);
+}
+.click {
+  margin-top: 2%;
+  width: 9%;
+  transition: width 0.4s linear;
+
+  height: 85%;
+  background-color: rgb(94, 85, 85);
+  font-size: 5vh;
+  border-radius: 4%;
+  color: rgb(134, 131, 131);
+  margin-left: 2%;
+  margin-right: 2%;
+  border: none;
+  color: white;
+}
+::placeholder {
+  font-size: 4vh;
+  color: white;
+}
+
+.click:hover {
+  box-shadow: 0 0 25px 0 crimson;
+  /* width: 50%;
+  transition: width 0.4s linear;
+  margin-right: 11%; */
+}
+
+.searchInterface {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0%;
+  margin-top: 4%;
+  margin-bottom: -1%;
+  height: 12vh;
+  width: 100%;
+  text-align: center;
+}
+
+#player {
+  border-radius: 9%;
+  width: 100px;
+}
+
+.favorites-app {
+  width: 100%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 9%;
+  margin-bottom: 7%;
+  width: 100%;
+}
+
+h1 {
+  color: rgb(70, 140, 141);
+  /* margin: 5vw; */
+  font-size: 5vw;
+  padding-left: 1.2%;
+  /* margin-left: 8vw; */
+}
+
+.recentlyViewed {
+  margin-bottom: 6%;
+  margin-top: 9%;
+  /* font-size: 5.01vw; */
+  font-size: 8vh;
+  height: fit-content;
+  background-color: rgb(0, 0, 0);
+  color: grey;
+  padding-left: 3%;
+  /* height: 25vh; */
+  /* margin-left: auto;
+  margin-right: auto; */
+  text-align: center;
+
+  /* width: 100%; */
+}
+
+.bottomH2 {
+  margin-bottom: 12%;
+  font-size: 5.01vw;
+  background-color: black;
+  height: fit-content;
+  color: grey;
+  padding-left: 2%;
+}
+.bottomH2:hover {
+  cursor: pointer;
+  background-color: black;
+
+  color: rgb(88, 16, 16);
+}
