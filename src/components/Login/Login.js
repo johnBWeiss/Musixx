@@ -28,11 +28,12 @@ function Login() {
 
     const [userLogged, setUserLogged] = useState(favoritesCtx.currentUser)
     // const [userLogged, setUserLogged] = useState("")
-    function logDisplay(msg) {
+    function logDisplay(msg, register) {
         setLoginDisplay(msg)
         setTimeout((msg) => {
             setLoginDisplay("")
-            setLogin(!login);
+            if (!register)
+                setLogin(!login);
 
 
         }, 2000);
@@ -63,7 +64,7 @@ function Login() {
             body: JSON.stringify({ username: userNameInput.current.value, password: passwordInput.current.value })
         }).then((response) => (response).json()).then((data) => {
             console.log(data);
-            logDisplay(`Welcome ${userNameInput.current.value} please sign in`)
+            logDisplay(`Welcome ${userNameInput.current.value} please sign in`, "register")
 
 
         }
@@ -85,8 +86,17 @@ function Login() {
             body: JSON.stringify({ username: userNameInput.current.value, password: passwordInput.current.value })
         }).then((response) =>
             (response).json()
-        ).then((data) => {
-            console.log(data);
+        ).then((data, response) => {
+            console.log(response);
+            console.log(data.message, "message");
+            if (data.message === "Invalid credentials") {
+                console.log("coolio"); setLoginDisplay(data.message);
+                setTimeout(() => {
+                    logOutHandler()
+                    setLoginDisplay("")
+                }, 2000); return
+            }
+            // if (response.message == "invalid credentials") { alert("invalid"); return }
             localStorage.setItem("accessToken", JSON.stringify(data));
             let tokeParsed = localStorage.getItem("accessToken")
             tokeParsed = JSON.parse(tokeParsed)
@@ -113,12 +123,7 @@ function Login() {
             <div className="connect" onClick={interfaceHandler}>Connect</div>
             <div className="logOut" onClick={logOutHandler} >Log Out</div>
 
-            {/* <div className="signUp" onClick={signUpHandler}>
-            Signup
-        </div> */}
-            {/* <div className="Login" onClick={loginHandler}>
-            Login
-        </div> */}
+
         </div>
         <div className="LoginMenu">
             {login ? (

@@ -5,7 +5,7 @@ let tokeParsed = localStorage.getItem("accessToken")
 
 console.log(tokeParsed);
 
-if (tokeParsed === "undefined") {
+if (JSON.parse(tokeParsed).accessToken === "undefined" || JSON.parse(tokeParsed).message == "Invalid credentials") {
     localStorage.setItem("accessToken", JSON.stringify([{ accessToken: 0 }, { username: "Guest", _id: 0 }]))
     tokeParsed = localStorage.getItem("accessToken")
 
