@@ -1,5 +1,6 @@
 .BlogWrapper {
   height: 100vh;
+  background-image: url("../../images/backGround.jpg");
 
   padding-top: 3%;
   display: flex;

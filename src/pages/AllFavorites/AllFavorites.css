@@ -1,5 +1,6 @@
 .Tester {
   color: white;
+  height: 100vh;
 }
 
 .favHeadLine {
@@ -16,14 +17,17 @@
 .FavoritesPageWrapper {
   /* padding: 2%; */
   /* margin-bottom: 20%; */
-  /* background-image: url("../../images/"); */
+  background-image: url("../../images/backGround.jpg");
   display: flex;
   flex-direction: column;
-  height: 270vh;
   padding-top: 3%;
-  /* width: 96.8vw; */
+  padding-bottom: 1em; /* width: 96.8vw; */
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-width: 98vw;
   /* margin-left: -2%; */
-  background-repeat: repeat-y;
+  background-repeat: repeat;
+  /* background-color: blueviolet; */
   /* margin-right: auto; */
 }
 
@@ -33,13 +37,21 @@
   margin-left: 20vw;
   margin-right: 20vw;
   font-size: 5vh;
-  margin-bottom: 175vh;
+  max-height: 200vh;
+
+  /* margin-bottom: 175vh; */
 }
 
-/* span {
-  display: flex;
-  font-size: 7vh;
-} */
+.widerHeader {
+  width: 122.5vw;
+  margin-top: 15%;
+  padding-bottom: 5%;
+  position: relative;
+  left: -6.5em;
+  overflow: hidden;
+  margin-top: 140%;
+}
+
 p {
   font-size: 3.5vh;
   color: rgb(0, 0, 0);
@@ -70,4 +82,8 @@ p {
   width: 3vw;
   font-size: 2vw;
   background-color: blue;
+}
+
+li::marker {
+  color: black;
 }

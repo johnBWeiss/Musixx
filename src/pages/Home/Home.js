@@ -25,6 +25,8 @@ function Home(props) {
     const favoritesCtx = useContext(FavoritesContext);
     console.log("testing this token", favoritesCtx.currentToken);
     const [display, setDisplay] = useState(broken)
+
+
     const currentFav = { fav: false }
     const nowUrl = favoritesCtx.currentUrl
 
@@ -32,23 +34,9 @@ function Home(props) {
     const [currentFavorite, setCurrentFavorite] = useState(false)
 
     const URL = { url: "ptwt7Fs5INo", title: "our last night: you broke me first" }
-    //check if this is the right parameter, needs to ne the current url
-
-    // useEffect(() => {
-    //     const checker = favoritesCtx.itemIsFavorite(URL.url)
-    //     if (checker) {
-    //         setDisplay("💗")
-    //     }
-    //     else {
-    //         setDisplay("♡")
-
-    //     }
-
-    // }, [])
 
 
     const artist = useRef("")
-    const songName = useRef("")
 
     useEffect(() => {
         {
@@ -60,6 +48,11 @@ function Home(props) {
 
     }, [])
 
+
+    function inputHandler(e) {
+        setInputArtist(e.target.value)
+
+    }
 
     function videoSearch(term) {
         YTSearch({ key: "AIzaSyDkzCPPFU6hoflI7xIVOcKLZjgNDLvaT4A", term: term },
@@ -90,7 +83,6 @@ function Home(props) {
     const [title, setTitle] = useState(URL.title)
 
     const [inputArtist, setInputArtist] = useState("")
-    const [inputSong, setInputSong] = useState("")
 
     useEffect(() => {
         const firstRenderIsFavorite = favoritesCtx.itemIsFavorite(favoritesCtx.currentUrl)
@@ -147,25 +139,18 @@ function Home(props) {
         }
     }
 
-    function inputArtistHandler(event) {
-        setInputArtist(event.target.value)
-    }
-
-    function inputSongHandler(event) {
-        setInputSong(event.target.value)
-    }
 
     function clickHandler() {
 
-        setInputSong("")
-        setInputArtist("")
-        const keyWord = (artist.current.value + " " + songName.current.value)
+        const keyWord = (artist.current.value)
         favoritesCtx.addRecent(nowUrl)
         videoSearch(keyWord)
         window.scrollTo({
             top: 300,
             behavior: "smooth"
         });
+        setInputArtist("")
+
 
     }
 
@@ -187,7 +172,7 @@ function Home(props) {
                 </div>
                 <div className='searchInterface'>
                     <input className="input"
-                        ref={artist} value={inputArtist} placeholder='search' />
+                        ref={artist} value={inputArtist} placeholder='search' onChange={inputHandler} />
                     {/* <input className="input" onChange={inputSongHandler}
                         ref={songName} value={inputSong} placeholder='song name' /> */}
                     <button className="click" onClick={clickHandler}>⌕</button>

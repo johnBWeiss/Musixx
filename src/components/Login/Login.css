@@ -5,6 +5,20 @@
   width: 20vw; */
 }
 
+.loginDisplay {
+  color: white;
+  font-size: 3vh;
+  color: crimson;
+  position: relative;
+  top: 3vh;
+  left: 1vw;
+  width: 18vw;
+  font-size: 4vh;
+  margin-bottom: 1%;
+  margin-top: 3%;
+  text-align: center;
+}
+
 .signUp {
   margin-left: 1%;
   display: flex;

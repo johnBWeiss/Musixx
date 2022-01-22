@@ -1,9 +1,27 @@
 import { createContext, useState } from "react";
-
+// localStorage.setItem("accessToken", JSON.stringify([{ accessToken: 0 }, { username: "Guest" }]))
 let tokeParsed = localStorage.getItem("accessToken")
+    ;
+
+console.log(tokeParsed);
+
+if (tokeParsed === "undefined") {
+    localStorage.setItem("accessToken", JSON.stringify([{ accessToken: 0 }, { username: "Guest", _id: 0 }]))
+    tokeParsed = localStorage.getItem("accessToken")
+
+
+}
+tokeParsed = localStorage.getItem("accessToken")
+
 tokeParsed = JSON.parse(tokeParsed)
-console.log(tokeParsed[0].accessToken);
-console.log(tokeParsed[1].username);
+
+
+
+
+
+console.log(tokeParsed);
+// console.log(tokeParsed[0].accessToken);
+// console.log(tokeParsed[1].username);
 
 
 const FavoritesContext = createContext({

@@ -86,10 +86,10 @@ function AllFavorites() {
                             {<FavPlayer url={`https://www.youtube.com/watch?v=${url.url}`} width="95%" height="30vh" playing={false} />
 
                             }
-
                         </div>
                     })}
 
+                    <div className="widerHeader"> <Header /></div>
 
 
 
@@ -122,17 +122,16 @@ function AllFavorites() {
 
 
                             }
-                        }>Remove favorite remember to change it
+                        }>Remove favorite
                             <div className="favoriteListItem" key={url.url}><p>{url.title}</p></div>
 
                             {<FavPlayer url={`https://www.youtube.com/watch?v=${url.url}`} width="95%" height="30vh" playing={false} />
 
                             }
+                            <div className="widerHeader"> <Header /></div>
 
                         </div>
                     })}
-
-
 
 
                 </div>
@@ -143,101 +142,14 @@ function AllFavorites() {
 
             }
 
-            {/* 
-            <div className='Container'>
-
-
-
-                {mongoList.map(url => {
-                    return <div className="removeFavoriteTitle" onClick={() => {
-                        favoritesCtx.removeFavorite(url.url);
-                        //     ()=>{
-                        //     fetch(`http://localhost:3001/songs`, {
-                        //         method: "POST",
-                        //         headers: { "Content-Type": "application/json" },
-                        //         body: JSON.stringify({ title: url.title })
-                        //     }).then((response) => (response).json()).then((data) =>
-                        //         console.log("deleted?", data))
 
 
 
 
 
-                        // }
-                    }}>Remove favorite
-                        <div className="favoriteListItem" key={url.url}><p>{url.title}</p></div>
 
-                        {<FavPlayer url={`https://www.youtube.com/watch?v=${url.url}`} width="95%" height="30vh" playing={false} />
-
-                        }
-
-                    </div>
-                })}
-
-
-
-
-            </div> */}
-
-
-
-
-
-        </div><Header /></div>
+        </div></div>
 }
 
 export default AllFavorites;
 
-//=======================================this works before tyrn to onject
-
-// import "./AllFavorites.css"
-// import Header from "../../components/Header/Header"
-// import Player from "../../components/Player/Player"
-// import Favorites from "../../components/Favorites/Favorites"
-// import { useContext, useState } from "react"
-// import FavoritesContext from '../../store/Favorites-context';
-
-
-// function AllFavorites() {
-//     const [currentUrl, setCurrentUrl] = useState("")
-//     const favoritesCtx = useContext(FavoritesContext);
-//     console.log(favoritesCtx.favorites);
-
-//     function removeFavoriteHandler(e, url) {
-//         // console.log(e.target.value);
-//         console.log(url);
-//         console.log(currentUrl);
-
-//     }
-
-//     return <div className="FavoritesPageWrapper">
-//         <Header />
-//         <div className="Tester">
-//             All favorites page
-//             <div className='Container'>
-
-
-
-//                 {favoritesCtx.favorites.map(url => {
-//                     return <div onClick={() => { favoritesCtx.removeFavorite(url) }}>Remove favorite
-//                         <div key={url}>
-
-//                             {<Player url={`https://www.youtube.com/watch?v=${url}`} width="90%" height="30vh" playing={false} />
-
-
-
-
-//                             }</div>
-//                         <p>name:</p>
-//                     </div>
-//                 })}
-
-
-
-
-//             </div>
-
-//         </div></div>
-// }
-
-// export default AllFavorites;

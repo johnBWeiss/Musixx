@@ -6,6 +6,8 @@ import FavoritesContext from '../../store/Favorites-context';
 function Login() {
 
     const [login, setLogin] = useState(false);
+    const [loginDisplay, setLoginDisplay] = useState("")
+
     const userNameInput = useRef("")
     const passwordInput = useRef("")
     const favoritesCtx = useContext(FavoritesContext);
@@ -26,6 +28,15 @@ function Login() {
 
     const [userLogged, setUserLogged] = useState(favoritesCtx.currentUser)
     // const [userLogged, setUserLogged] = useState("")
+    function logDisplay(msg) {
+        setLoginDisplay(msg)
+        setTimeout((msg) => {
+            setLoginDisplay("")
+            setLogin(!login);
+
+
+        }, 2000);
+    }
 
 
     function interfaceHandler() {
@@ -37,17 +48,12 @@ function Login() {
         localStorage.setItem("accessToken", JSON.stringify([{ accessToken: 0 }, { username: "Guest" }]));
         setUserLogged("Guest")
         favoritesCtx.changeCurrentUser("Guest")
+        setLogin(!login);
+        // userNameInput = ""
+        // passwordInput = ""
+
     }
-
-    // function signUpHandler() {
-    //     setLogin(!login);
-    //     console.log("login");
-
-    // }
-    // function click(e) {
-    //     console.log(e.target.value);
-
-    // }
+    // if (response.status == 401) { logDisplay("registry failed") };
 
     function registerHandler() {
         console.log(userNameInput.current, passwordInput.current.value);
@@ -55,19 +61,31 @@ function Login() {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username: userNameInput.current.value, password: passwordInput.current.value })
-        }).then((response) => (response).json()).then((data) =>
-            console.log(data.username))
-        // setLogin(!login);
+        }).then((response) => (response).json()).then((data) => {
+            console.log(data);
+            logDisplay(`Welcome ${userNameInput.current.value} please sign in`)
+
+
+        }
+
+
+        )
 
 
     }
+
+    // if (response.status == 400) {
+    //     logDisplay("Invalid credentials")
+    // }
 
     function loginHandler() {
         fetch(`http://localhost:3001/users/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username: userNameInput.current.value, password: passwordInput.current.value })
-        }).then((response) => (response).json()).then((data) => {
+        }).then((response) =>
+            (response).json()
+        ).then((data) => {
             console.log(data);
             localStorage.setItem("accessToken", JSON.stringify(data));
             let tokeParsed = localStorage.getItem("accessToken")
@@ -83,11 +101,11 @@ function Login() {
 
 
             setUserLogged(tokeParsed[1].username)
+            logDisplay("logged in successfully!")
+
+
         })
-        setLogin(!login);
     }
-
-
 
     return <>
         <div className="userLogged">hello {userLogged}</div>
@@ -111,6 +129,7 @@ function Login() {
                     <div className="registerAndSignIn">
                         <div className="register" onClick={registerHandler}>Register</div>
                         <div onClick={loginHandler}>Sign in</div></div>
+                    <div className="loginDisplay">{loginDisplay}</div>
 
                 </>
             ) : (
