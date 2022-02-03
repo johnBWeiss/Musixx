@@ -7,21 +7,22 @@
     url("../../components/fonts/Crowd.ttf") format("truetype");
 }
 .wrapper {
-  /* padding-top: 5%; */
   padding-right: 0%;
   padding-left: 0%;
   margin-top: -1.99%;
   width: 100%;
-  height: 305vh;
-  /* margin-bottom: 20%; */
+  height: 1700px;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   background-image: url("../../images/backGround.jpg");
-
-  /* width: 89vw; */
   margin-left: auto;
   background-repeat: repeat;
   margin-right: auto;
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 form {
@@ -35,53 +36,49 @@ form {
   flex-direction: column;
   width: 60%;
   max-width: 60%;
-  height: 220vh;
+  height: 140vw;
   padding-bottom: 2%;
-  /* margin-left: 30%; */
   background-image: url("../../images/App.jpg");
   border-radius: 9%;
   margin-top: 11%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 9%;
-  /* margin-left: 25%; */
   box-shadow: rgb(105, 97, 97);
-  /* background-image: url("./images/backGround.png"); */
 }
 
 .AppLogin {
   position: fixed;
   left: -5vw;
   top: 25vh;
-  width: 40vw;
+  width: 35vw;
   height: 20vh;
   display: inline-block;
-  /* margin-bottom: 30%; */
 }
 
 .heartContainer {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  width: 95%;
+  gap: 4%;
   margin-top: 2%;
-  margin-bottom: 1.5%;
+  margin-bottom: -2%;
 }
 .heart {
-  font-size: 12.5vh;
+  font-size: 10vw;
   height: 0.6em;
-  /* width: 4%; */
-  position: relative;
-  top: -1vh;
-  left: 47.5vw;
-  margin-top: 3.5%;
   color: rgb(207, 25, 25);
+  position: static;
+  margin: 0%;
 }
 
 .heartCluster {
-  height: 0.5em;
-  position: relative;
-  top: 3.5vh;
-  left: 49.5vw;
-  margin-top: 0%;
-  margin-bottom: -2%;
+  height: 7vw;
+  position: static;
+  margin-bottom: 0%;
+  margin-top: 30%;
 }
 
 .heart:hover {
@@ -107,16 +104,14 @@ form {
   background-color: rgb(61, 18, 18);
   color: white;
   width: 50%;
+  border-radius: 40px;
   transition: width 0.1s;
   transition: margin-left 0.1s;
-
-  height: 85%;
+  height: 6vw;
   place-content: inherit;
   font-size: 1.5vw;
   margin-left: 20.5%;
-
   margin-right: 0%;
-  /* box-shadow: 0 0 25px 0px crimson; */
 }
 
 .input:hover {
@@ -128,15 +123,11 @@ form {
   background-color: rgb(49, 11, 11);
   color: white;
   margin-left: 9%;
-  /* transition: margin-left 5.5s; */
   transition: all 0.2s ease-in-out;
-
+  border-radius: 40px;
   width: 70%;
-  /* transition: width 5.5s linear; */
-  height: 85%;
   place-content: inherit;
   font-size: 1.5vw;
-
   margin-right: 0%;
   box-shadow: 0 0 25px 0px rgb(238, 9, 55);
 }
@@ -144,11 +135,12 @@ form {
   margin-top: 2%;
   width: 9%;
   transition: width 0.4s linear;
-
-  height: 85%;
+  border-radius: 25px;
+  height: 6vw;
   background-color: rgb(94, 85, 85);
-  font-size: 5vh;
-  border-radius: 4%;
+  font-size: 3vw;
+  text-align: center;
+  align-items: center;
   color: rgb(134, 131, 131);
   margin-left: 2%;
   margin-right: 2%;
@@ -162,9 +154,6 @@ form {
 
 .click:hover {
   box-shadow: 0 0 25px 0 crimson;
-  /* width: 50%;
-  transition: width 0.4s linear;
-  margin-right: 11%; */
 }
 
 .searchInterface {
@@ -192,31 +181,24 @@ form {
   border-radius: 9%;
   margin-bottom: 7%;
   width: 100%;
+  max-height: 28vw;
 }
 
 h1 {
   color: rgb(70, 140, 141);
-  /* margin: 5vw; */
   font-size: 5vw;
   padding-left: 1.2%;
-  /* margin-left: 8vw; */
 }
 
 .recentlyViewed {
   margin-bottom: 6%;
   margin-top: 9%;
-  /* font-size: 5.01vw; */
-  font-size: 8vh;
+  font-size: 6vw;
   height: fit-content;
   background-color: rgb(0, 0, 0);
   color: grey;
   padding-left: 3%;
-  /* height: 25vh; */
-  /* margin-left: auto;
-  margin-right: auto; */
   text-align: center;
-
-  /* width: 100%; */
 }
 
 .bottomH2 {
@@ -230,6 +212,5 @@ h1 {
 .bottomH2:hover {
   cursor: pointer;
   background-color: black;
-
   color: rgb(88, 16, 16);
 }

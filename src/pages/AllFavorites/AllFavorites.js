@@ -94,47 +94,46 @@ function AllFavorites() {
 
 
                 </div> :
-
-                //TODO - get the song list and displat it here instead of the local favorties
-                <div className='Container'>
-
-
-
-                    {favoritesCtx.favorites.map(url => {
-                        return <div className="removeFavoriteTitle" onClick={
-                            () => {
-                                console.log("why not deleting");
-
-                                fetch(`http://localhost:3001/songs/${url.url}`, {
-                                    method: "DELETE",
-                                    headers: {
-                                        "Content-Type": "application/json", Authorization: `Bearer ${favoritesCtx.currentToken}`
-                                    },
-                                    // body: JSON.stringify({ title: url.title })
-                                }).then((response) => (response).json()).then((data) => {
+                <div className="favoritesContainer">
+                    <div className='Container'>
 
 
 
+                        {favoritesCtx.favorites.map(url => {
+                            return <div className="removeFavoriteTitle" onClick={
+                                () => {
+                                    console.log("why not deleting");
 
-                                    favoritesCtx.removeFavorite(url.url);
-                                    console.log(data);
-                                })
-
-
-                            }
-                        }>Remove favorite
-                            <div className="favoriteListItem" key={url.url}><p>{url.title}</p></div>
-
-                            {<FavPlayer url={`https://www.youtube.com/watch?v=${url.url}`} width="95%" height="30vh" playing={false} />
-
-                            }
-                            <div className="widerHeader"> <Header /></div>
-
-                        </div>
-                    })}
+                                    fetch(`http://localhost:3001/songs/${url.url}`, {
+                                        method: "DELETE",
+                                        headers: {
+                                            "Content-Type": "application/json", Authorization: `Bearer ${favoritesCtx.currentToken}`
+                                        },
+                                        // body: JSON.stringify({ title: url.title })
+                                    }).then((response) => (response).json()).then((data) => {
 
 
-                </div>
+
+
+                                        favoritesCtx.removeFavorite(url.url);
+                                        console.log(data);
+                                    })
+
+
+                                }
+                            }>Remove favorite
+                                <div className="favoriteListItem" key={url.url}><p>{url.title}</p></div>
+
+                                {<FavPlayer url={`https://www.youtube.com/watch?v=${url.url}`} width="95%" height="30vh" playing={false} />
+
+                                }
+                                {/* <div className="widerHeader"> <Header /></div> */}
+
+                            </div>
+                        })}
+
+
+                    </div></div>
 
 
 

@@ -66,18 +66,13 @@ function Login() {
             console.log(data);
             logDisplay(`Welcome ${userNameInput.current.value} please sign in`, "register")
 
-
         }
 
 
         )
 
-
     }
 
-    // if (response.status == 400) {
-    //     logDisplay("Invalid credentials")
-    // }
 
     function loginHandler() {
         fetch(`http://localhost:3001/users/login`, {
@@ -121,26 +116,24 @@ function Login() {
         <div className="userLogged">hello {userLogged}</div>
         <div className="credentialsInterface">
             <div className="connect" onClick={interfaceHandler}>Connect</div>
-            <div className="logOut" onClick={logOutHandler} >Log Out</div>
+            <div className="logOut" onClick={logOutHandler} >Log Out</div>     <div className="LoginMenu">
+                {login ? (
+                    <>
+                        <input className="userNameInput" placeholder={"user name"} ref={userNameInput} className="usernameInput"></input>
+                        <input placeholder={"password"} className="passwordInput"
+                            ref={passwordInput}></input>
+                        <div className="registerAndSignIn">
+                            <div className="register" onClick={registerHandler}>Register</div>
+                            <div onClick={loginHandler}>Sign in</div></div>
+                        <div className="loginDisplay">{loginDisplay}</div>
 
-
+                    </>
+                ) : (
+                    <div></div>
+                )}
+            </div>
         </div>
-        <div className="LoginMenu">
-            {login ? (
-                <>
-                    <input className="userNameInput" placeholder={"user name"} ref={userNameInput} className="usernameInput"></input>
-                    <input placeholder={"password"} className="passwordInput"
-                        ref={passwordInput}></input>
-                    <div className="registerAndSignIn">
-                        <div className="register" onClick={registerHandler}>Register</div>
-                        <div onClick={loginHandler}>Sign in</div></div>
-                    <div className="loginDisplay">{loginDisplay}</div>
 
-                </>
-            ) : (
-                <div></div>
-            )}
-        </div>
 
 
     </>

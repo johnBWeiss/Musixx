@@ -1,6 +1,7 @@
 .Tester {
   color: white;
   height: 100vh;
+  width: 70%;
 }
 
 .favHeadLine {
@@ -21,25 +22,33 @@
   display: flex;
   flex-direction: column;
   padding-top: 3%;
-  padding-bottom: 1em; /* width: 96.8vw; */
+  padding-bottom: 1em;
   overflow-y: auto;
   overflow-x: hidden;
   min-width: 98vw;
-  /* margin-left: -2%; */
+
   background-repeat: repeat;
-  /* background-color: blueviolet; */
-  /* margin-right: auto; */
+}
+
+.FavoritesPageWrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .Container {
   width: 22vw;
-  /* display: grid; */
-  margin-left: 20vw;
-  margin-right: 20vw;
+  margin-left: auto;
+  margin-right: 35vw;
   font-size: 5vh;
   max-height: 200vh;
+  display: flex;
+  gap: 65px;
+}
 
-  /* margin-bottom: 175vh; */
+.favoritesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  overflow: hidden;
 }
 
 .widerHeader {
@@ -54,7 +63,7 @@
 
 p {
   font-size: 3.5vh;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .removeFavoriteTitle {
