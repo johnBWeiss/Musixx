@@ -1,23 +1,22 @@
 .Tester {
   color: white;
-  height: 100vh;
-  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 .favHeadLine {
   font-size: 14vh;
   color: crimson;
   text-align: center;
-  margin-right: 7vw;
-  margin-left: 8vw;
+  margin-right: auto;
+  margin-left: auto;
   margin-top: 5vh;
   padding-top: 5%;
-  margin-bottom: 3%;
+  margin-bottom: 5%;
 }
 
 .FavoritesPageWrapper {
-  /* padding: 2%; */
-  /* margin-bottom: 20%; */
   background-image: url("../../images/backGround.jpg");
   display: flex;
   flex-direction: column;
@@ -25,8 +24,6 @@
   padding-bottom: 1em;
   overflow-y: auto;
   overflow-x: hidden;
-  min-width: 98vw;
-
   background-repeat: repeat;
 }
 
@@ -34,21 +31,23 @@
   display: none;
 }
 
-.Container {
-  width: 22vw;
-  margin-left: auto;
-  margin-right: 35vw;
-  font-size: 5vh;
-  max-height: 200vh;
-  display: flex;
-  gap: 65px;
-}
-
 .favoritesContainer {
   display: flex;
   flex-wrap: wrap;
-  width: 200px;
+  gap: 2%;
   overflow: hidden;
+  width: 85vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+}
+
+.Container {
+  font-size: 5vh;
+  margin-bottom: 5%;
+  background-color: black;
+  padding: 1%;
+  border-radius: 25px;
 }
 
 .widerHeader {
@@ -61,30 +60,33 @@
   margin-top: 140%;
 }
 
-p {
-  font-size: 3.5vh;
+.urlTitle {
+  font-size: 0.7em;
   color: rgb(255, 255, 255);
+  overflow-y: hidden;
+  min-height: 10vh;
+  margin-bottom: 4%;
+  margin-top: 2%;
+  text-align: center;
 }
 
 .removeFavoriteTitle {
-  margin-top: 13%;
-  margin-bottom: 10%;
-  margin-left: -11%;
-  font-size: 2.15rem;
+  margin-top: 3%;
+  font-size: 1em;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 .removeFavoriteTitle:hover {
-  margin-top: 13%;
-  margin-bottom: 10%;
-  margin-left: -11%;
-  font-size: 2.15rem;
   color: crimson;
   cursor: pointer;
 }
 
 .favoriteListItem {
-  height: 10vh;
   width: 25vw;
+  overflow-y: hidden;
 }
 
 .seperator {
@@ -95,4 +97,15 @@ p {
 
 li::marker {
   color: black;
+}
+
+.noFooter {
+  width: 30vw;
+  padding: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 3%;
+  border: 9px dotted white;
 }

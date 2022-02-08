@@ -23,11 +23,11 @@ function AllFavorites() {
 
     }, [])
 
-
-
     const [currentFavList, setCurrentFavList] = useState(favoritesCtx.currentUser)
 
     const [mongoList, setMongoList] = useState([])
+    const [optionalFooter, setOptionalFooter] = useState(<div className="noFooter">see what others are watching</div>)
+
 
     useEffect(() => {
         fetch(`http://localhost:3001/songs/${favoritesCtx.currentId}`, {
@@ -38,22 +38,18 @@ function AllFavorites() {
             then((data) => {
                 console.log("song list?", data); setMongoList((prev) => prev.concat(data)); if (favoritesCtx.currentUser != "Guest") {
                     favoritesCtx.switchAllFavorites(data)
+                    if (data.length == 0) {
+                        setOptionalFooter(<div className="noFooter">see what others are watching</div>)
+
+                    } else {
+                        setOptionalFooter(<Header />)
+
+                    }
+
                 }
             })
 
     }, [])
-
-
-
-
-
-
-
-    // function removeFavoriteHandler(e, url) {
-    //     console.log(url);
-    //     console.log(currentUrl);
-
-    // }
 
     return <div className="FavoritesPageWrapper">
         <Header />
@@ -61,9 +57,6 @@ function AllFavorites() {
         <div className="Tester">
             {favoritesCtx.currentUser == "Guest" ?
                 <div className='Container'>
-
-
-
                     {favoritesCtx.favorites.map(url => {
                         return <div className="removeFavoriteTitle" onClick={() => {
                             favoritesCtx.removeFavorite(url.url);
@@ -74,14 +67,9 @@ function AllFavorites() {
                             //         body: JSON.stringify({ title: url.title })
                             //     }).then((response) => (response).json()).then((data) =>
                             //         console.log("deleted?", data))
-
-
-
-
-
                             // }
                         }}>Remove favorite
-                            <div className="favoriteListItem" key={url.url}><p>{url.title}</p></div>
+                            <div className="favoriteListItem" key={url.url}><div className="urlTitle">{url.title.split("(", 1)}</div></div>
 
                             {<FavPlayer url={`https://www.youtube.com/watch?v=${url.url}`} width="95%" height="30vh" playing={false} />
 
@@ -91,16 +79,17 @@ function AllFavorites() {
 
                     <div className="widerHeader"> <Header /></div>
 
-
-
                 </div> :
                 <div className="favoritesContainer">
-                    <div className='Container'>
+                    {favoritesCtx.favorites.map(url => {
+                        return <div className='Container'>
 
+                            <div className="favoriteListItem" key={url.url}><div className="urlTitle">{url.title.split("(", 1)}</div></div>
 
+                            {<FavPlayer url={`https://www.youtube.com/watch?v=${url.url}`} width="100%" height="30vh" playing={false} />
 
-                        {favoritesCtx.favorites.map(url => {
-                            return <div className="removeFavoriteTitle" onClick={
+                            }
+                            <div className="removeFavoriteTitle" onClick={
                                 () => {
                                     console.log("why not deleting");
 
@@ -111,29 +100,17 @@ function AllFavorites() {
                                         },
                                         // body: JSON.stringify({ title: url.title })
                                     }).then((response) => (response).json()).then((data) => {
-
-
-
-
                                         favoritesCtx.removeFavorite(url.url);
                                         console.log(data);
                                     })
-
-
                                 }
-                            }>Remove favorite
-                                <div className="favoriteListItem" key={url.url}><p>{url.title}</p></div>
-
-                                {<FavPlayer url={`https://www.youtube.com/watch?v=${url.url}`} width="95%" height="30vh" playing={false} />
-
-                                }
-                                {/* <div className="widerHeader"> <Header /></div> */}
-
-                            </div>
-                        })}
+                            }>Remove favorite</div>
+                        </div>
+                    })}
 
 
-                    </div></div>
+
+                </div>
 
 
 
@@ -146,8 +123,13 @@ function AllFavorites() {
 
 
 
+            {optionalFooter}
 
-        </div></div>
+        </div>
+
+
+
+    </div>
 }
 
 export default AllFavorites;

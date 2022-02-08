@@ -20,6 +20,9 @@ function Home(props) {
 
     const favoritesCtx = useContext(FavoritesContext);
     console.log("testing this token", favoritesCtx.currentToken);
+    console.log(favoritesCtx.currentId);
+    console.log(typeof (favoritesCtx.currentId))
+
     const [display, setDisplay] = useState(broken)
 
 
@@ -115,7 +118,7 @@ function Home(props) {
                     Authorization: `Bearer ${favoritesCtx.currentToken}`
                 },
 
-                body: JSON.stringify({ title: title, url: url, createdBy: favoritesCtx.currentId })
+                body: JSON.stringify({ title: title, url: url, adder: favoritesCtx.currentId, createdBy: favoritesCtx.currentId })
             }).then((response) => (response).json()).then((data) =>
                 console.log("saved?", data))
 

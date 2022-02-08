@@ -138,13 +138,14 @@ form {
   border-radius: 25px;
   height: 6vw;
   background-color: rgb(94, 85, 85);
-  font-size: 3vw;
+  font-size: 2.5vw;
   text-align: center;
   align-items: center;
   color: rgb(134, 131, 131);
   margin-left: 2%;
   margin-right: 2%;
   border: none;
+  padding: 0%;
   color: white;
 }
 ::placeholder {

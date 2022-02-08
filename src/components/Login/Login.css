@@ -97,7 +97,7 @@
   color: white;
   position: relative;
   top: 15%;
-  left: 15.5%;
+  left: 18%;
   font-size: 2em;
   width: 18vw;
   height: fit-content;
@@ -132,7 +132,7 @@
 .registerAndSignIn {
   display: flex;
   position: relative;
-  left: 3vw;
+  /* left: 3vw; */
   color: white;
 }
 
