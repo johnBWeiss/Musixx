@@ -1,6 +1,5 @@
 import "./AllFavorites.css"
 import Header from "../../components/Header/Header"
-// import FavHeader from "../../components/Header/FavHeader"
 import Player from "../../components/Player/Player"
 import Favorites from "../../components/Favorites/Favorites"
 import { useContext, useState, useEffect } from "react"
@@ -24,7 +23,6 @@ function AllFavorites() {
     }, [])
 
     const [currentFavList, setCurrentFavList] = useState(favoritesCtx.currentUser)
-
     const [mongoList, setMongoList] = useState([])
     const [optionalFooter, setOptionalFooter] = useState(<div className="noFooter">see what others are watching</div>)
 
@@ -60,19 +58,9 @@ function AllFavorites() {
                     {favoritesCtx.favorites.map(url => {
                         return <div className="removeFavoriteTitle" onClick={() => {
                             favoritesCtx.removeFavorite(url.url);
-                            //     ()=>{
-                            //     fetch(`http://localhost:3001/songs`, {
-                            //         method: "POST",
-                            //         headers: { "Content-Type": "application/json" },
-                            //         body: JSON.stringify({ title: url.title })
-                            //     }).then((response) => (response).json()).then((data) =>
-                            //         console.log("deleted?", data))
-                            // }
                         }}>Remove favorite
                             <div className="favoriteListItem" key={url.url}><div className="urlTitle">{url.title.split("(", 1)}</div></div>
-
                             {<FavPlayer url={`https://www.youtube.com/watch?v=${url.url}`} width="95%" height="30vh" playing={false} />
-
                             }
                         </div>
                     })}
@@ -91,17 +79,22 @@ function AllFavorites() {
                             }
                             <div className="removeFavoriteTitle" onClick={
                                 () => {
-                                    console.log("why not deleting");
+                                    favoritesCtx.removeFavorite(url.url);
+                                    console.log(favoritesCtx.favorites);
+                                    if (favoritesCtx.favorites.length == 1) {
+                                        setOptionalFooter(<div className="noFooter">see what others are watching</div>)
 
+                                    }
                                     fetch(`http://localhost:3001/songs/${url.url}`, {
                                         method: "DELETE",
                                         headers: {
                                             "Content-Type": "application/json", Authorization: `Bearer ${favoritesCtx.currentToken}`
                                         },
-                                        // body: JSON.stringify({ title: url.title })
+                                        body: JSON.stringify({ title: url.title, adder: favoritesCtx.currentId })
                                     }).then((response) => (response).json()).then((data) => {
-                                        favoritesCtx.removeFavorite(url.url);
                                         console.log(data);
+
+
                                     })
                                 }
                             }>Remove favorite</div>
