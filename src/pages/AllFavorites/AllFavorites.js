@@ -23,7 +23,6 @@ function AllFavorites() {
     }, [])
 
     const [currentFavList, setCurrentFavList] = useState(favoritesCtx.currentUser)
-    const [mongoList, setMongoList] = useState([])
     const [optionalFooter, setOptionalFooter] = useState(<div className="noFooter">see what others are watching</div>)
 
 
@@ -34,40 +33,61 @@ function AllFavorites() {
         }).
             then((response) => (response).json()).
             then((data) => {
-                console.log("song list?", data); setMongoList((prev) => prev.concat(data)); if (favoritesCtx.currentUser != "Guest") {
+                console.log("song list?", data); if (favoritesCtx.currentUser != "Guest") {
                     favoritesCtx.switchAllFavorites(data)
                     if (data.length == 0) {
                         setOptionalFooter(<div className="noFooter">see what others are watching</div>)
 
                     } else {
                         setOptionalFooter(<Header />)
-
                     }
-
                 }
             })
 
     }, [])
+
+    useEffect(() => {
+
+
+        if (favoritesCtx.favorites.length == 0) {
+            setOptionalFooter(<div className="noFooter">see what others are watching</div>)
+        }
+        else {
+            setOptionalFooter(<Header />)
+        }
+
+    }, [])
+
+
 
     return <div className="FavoritesPageWrapper">
         <Header />
         <div className="favHeadLine">{currentFavList}`s Favorites</div>
         <div className="Tester">
             {favoritesCtx.currentUser == "Guest" ?
-                <div className='Container'>
+                <div className="favoritesContainer">
                     {favoritesCtx.favorites.map(url => {
-                        return <div className="removeFavoriteTitle" onClick={() => {
-                            favoritesCtx.removeFavorite(url.url);
-                        }}>Remove favorite
+
+                        return <div className='Container'>
+
                             <div className="favoriteListItem" key={url.url}><div className="urlTitle">{url.title.split("(", 1)}</div></div>
-                            {<FavPlayer url={`https://www.youtube.com/watch?v=${url.url}`} width="95%" height="30vh" playing={false} />
+
+                            {<FavPlayer url={`https://www.youtube.com/watch?v=${url.url}`} width="100%" height="30vh" playing={false} />
+
                             }
+                            <div className="removeFavoriteTitle" onClick={
+                                () => {
+                                    favoritesCtx.removeFavorite(url.url);
+
+                                }
+                            }>Remove favorite</div>
                         </div>
                     })}
 
-                    <div className="widerHeader"> <Header /></div>
+                </div>
 
-                </div> :
+                :
+
                 <div className="favoritesContainer">
                     {favoritesCtx.favorites.map(url => {
                         return <div className='Container'>
@@ -83,7 +103,6 @@ function AllFavorites() {
                                     console.log(favoritesCtx.favorites);
                                     if (favoritesCtx.favorites.length == 1) {
                                         setOptionalFooter(<div className="noFooter">see what others are watching</div>)
-
                                     }
                                     fetch(`http://localhost:3001/songs/${url.url}`, {
                                         method: "DELETE",
@@ -94,28 +113,13 @@ function AllFavorites() {
                                     }).then((response) => (response).json()).then((data) => {
                                         console.log(data);
 
-
                                     })
                                 }
                             }>Remove favorite</div>
                         </div>
                     })}
-
-
-
                 </div>
-
-
-
-
-
             }
-
-
-
-
-
-
             {optionalFooter}
 
         </div>

@@ -1,30 +1,25 @@
 .credentialsInterface {
   display: flex;
-  /* position: relative;
-  left: -19vw;
-  width: 20vw; */
+  flex-direction: column;
+  margin-left: 11%;
+  align-items: center;
+  width: 60%;
+  position: relative;
 }
 
 .loginDisplay {
   color: white;
   font-size: 3vh;
   color: crimson;
-  position: relative;
-  top: 3vh;
-  left: 1vw;
   width: 18vw;
   font-size: 4vh;
-  margin-bottom: 1%;
-  margin-top: 3%;
   text-align: center;
 }
 
 .signUp {
-  margin-left: 1%;
   display: flex;
   flex-direction: column;
   color: crimson;
-  position: relative;
   top: 3vh;
   width: 15vw;
   font-size: 3vh;
@@ -34,11 +29,8 @@
 }
 
 .Login {
-  margin-left: 1%;
   display: flex;
-  flex-direction: column;
   color: crimson;
-  position: relative;
   top: 3vh;
   width: 15vw;
   font-size: 3vh;
@@ -48,11 +40,10 @@
 }
 
 .LoginMenu {
-  margin-left: 9.5%;
   display: flex;
   flex-direction: column;
+  width: 80%;
   color: crimson;
-  position: relative;
   top: 8vh;
   width: fit-content;
 }
@@ -69,51 +60,43 @@
 .usernameInput {
   color: rgb(0, 0, 0);
   width: 16vw;
-  height: 6vh;
+  height: 3vw;
+  margin-top: 5%;
   margin-bottom: 4%;
   border-radius: 7%;
   border: none;
   text-align: center;
   font-size: 2vw;
   background-color: rgb(153, 76, 70);
-  position: relative;
-  left: 2vw;
+  align-items: center;
 }
 .passwordInput {
   color: rgb(0, 0, 0);
   width: 16vw;
-  height: 6vh;
+  height: 3vw;
   margin-bottom: 4%;
   border-radius: 7%;
   border: none;
   text-align: center;
   font-size: 2vw;
   background-color: rgb(153, 76, 70);
-  position: relative;
-  left: 2vw;
 }
 
 .userLogged {
   color: white;
-  position: relative;
-  top: 15%;
-  left: 18%;
   font-size: 2em;
+  margin-left: 7%;
   width: 18vw;
   height: fit-content;
-  margin-right: 0%;
   padding: 0%;
-  display: inline-block;
   flex-wrap: wrap;
   overflow-x: auto;
+  align-items: center;
 }
 
 .connect {
   font-size: 1.2em;
   color: rgb(170, 126, 166);
-  position: relative;
-  left: 6.7vw;
-  top: 5vh;
 }
 
 .connect:hover {
@@ -124,22 +107,28 @@
 .logOut {
   font-size: 1.2em;
   color: aqua;
-  position: relative;
-  left: 8vw;
-  top: 5vh;
 }
 
 .registerAndSignIn {
   display: flex;
-  position: relative;
-  /* left: 3vw; */
+  width: 85%;
   color: white;
-}
-
-.register {
-  margin-right: 23%;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .register:hover {
   color: white;
+}
+
+.userLoginInterface {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.dropdownLoginMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

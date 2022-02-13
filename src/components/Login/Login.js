@@ -4,7 +4,6 @@ import FavoritesContext from '../../store/Favorites-context';
 
 
 function Login() {
-
     const [login, setLogin] = useState(false);
     const [loginDisplay, setLoginDisplay] = useState("")
 
@@ -15,19 +14,8 @@ function Login() {
     let tokeParsed = localStorage.getItem("accessToken")
     console.log(tokeParsed);
     tokeParsed = JSON.parse(tokeParsed)
-    // console.log(tokeParsed[0].accessToken);
-    // console.log(tokeParsed[1].username);
-    // console.log(tokeParsed[1]._id);
-    // console.log(tokeParsed[1]);
-
-
-
-
-
-    // setUserLogged(tokeParsed[1].username)
 
     const [userLogged, setUserLogged] = useState(favoritesCtx.currentUser)
-    // const [userLogged, setUserLogged] = useState("")
     function logDisplay(msg, register) {
         setLoginDisplay(msg)
         setTimeout((msg) => {
@@ -50,11 +38,9 @@ function Login() {
         setUserLogged("Guest")
         favoritesCtx.changeCurrentUser("Guest")
         setLogin(!login);
-        // userNameInput = ""
-        // passwordInput = ""
+
 
     }
-    // if (response.status == 401) { logDisplay("registry failed") };
 
     function registerHandler() {
         console.log(userNameInput.current, passwordInput.current.value);
@@ -112,27 +98,34 @@ function Login() {
         })
     }
 
-    return <>
-        <div className="userLogged">hello {userLogged}</div>
-        <div className="credentialsInterface">
-            <div className="connect" onClick={interfaceHandler}>Connect</div>
-            <div className="logOut" onClick={logOutHandler} >Log Out</div>     <div className="LoginMenu">
-                {login ? (
-                    <>
-                        <input className="userNameInput" placeholder={"user name"} ref={userNameInput} className="usernameInput"></input>
-                        <input placeholder={"password"} className="passwordInput"
-                            ref={passwordInput}></input>
-                        <div className="registerAndSignIn">
-                            <div className="register" onClick={registerHandler}>Register</div>
-                            <div onClick={loginHandler}>Sign in</div></div>
-                        <div className="loginDisplay">{loginDisplay}</div>
+    return <>        <div className="credentialsInterface">
 
-                    </>
-                ) : (
-                    <div></div>
-                )}
-            </div>
+        <div className="userLogged">hello {userLogged}</div>
+        <div className="userLoginInterface">
+            <div className="connect" onClick={interfaceHandler}>Connect</div>
+            <div className="logOut" onClick={logOutHandler} >Log Out</div>
         </div>
+
+        {/* <div className="LoginMenu"> */}
+        <>
+
+            {login ? (
+                <div className="dropdownLoginMenu">
+                    <input className="userNameInput" placeholder={"user name"} ref={userNameInput} className="usernameInput"></input>
+                    <input placeholder={"password"} className="passwordInput"
+                        ref={passwordInput}></input>
+                    <div className="registerAndSignIn">
+                        <div className="register" onClick={registerHandler}>Register</div>
+                        <div onClick={loginHandler}>Sign in</div></div>
+                    <div className="loginDisplay">{loginDisplay}</div>
+
+                </div>
+            ) : (
+                <div></div>
+            )}
+        </>
+        {/* </div> */}
+    </div>
 
 
 

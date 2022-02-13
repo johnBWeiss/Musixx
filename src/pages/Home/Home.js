@@ -20,8 +20,6 @@ function Home(props) {
 
     const favoritesCtx = useContext(FavoritesContext);
     console.log("testing this token", favoritesCtx.currentToken);
-    console.log(favoritesCtx.currentId);
-    console.log(typeof (favoritesCtx.currentId))
 
     const [display, setDisplay] = useState(broken)
 
