@@ -112,11 +112,11 @@ function Login() {
             {login ? (
                 <div className="dropdownLoginMenu">
                     <input className="userNameInput" placeholder={"user name"} ref={userNameInput} className="usernameInput"></input>
-                    <input placeholder={"password"} className="passwordInput"
+                    <input type="password" placeholder={"password"} className="passwordInput"
                         ref={passwordInput}></input>
                     <div className="registerAndSignIn">
                         <div className="register" onClick={registerHandler}>Register</div>
-                        <div onClick={loginHandler}>Sign in</div></div>
+                        <div className="signIn" onClick={loginHandler}>Sign in</div></div>
                     <div className="loginDisplay">{loginDisplay}</div>
 
                 </div>

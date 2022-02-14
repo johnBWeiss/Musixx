@@ -18,6 +18,7 @@
   margin-left: auto;
   background-repeat: repeat;
   margin-right: auto;
+  overflow-y: visible;
 }
 
 .wrapper::-webkit-scrollbar {

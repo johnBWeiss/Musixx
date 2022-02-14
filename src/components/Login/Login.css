@@ -108,17 +108,27 @@
   font-size: 1.2em;
   color: aqua;
 }
+.logOut:hover {
+  color: brown;
+  cursor: pointer;
+}
 
 .registerAndSignIn {
   display: flex;
   width: 85%;
-  color: white;
+  color: aqua;
   align-items: center;
   justify-content: space-between;
 }
 
 .register:hover {
-  color: white;
+  color: brown;
+  cursor: pointer;
+}
+
+.signIn:hover {
+  color: brown;
+  cursor: pointer;
 }
 
 .userLoginInterface {
