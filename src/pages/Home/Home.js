@@ -144,7 +144,10 @@ function Home(props) {
             <Header />
             <div className="App">
                 <h1>MusiXX</h1>
-                <Player url={`https://www.youtube.com/watch?v=${url}`} width="100%" playing={false} />
+
+                <div className="homePlaye">
+                    <Player url={`https://www.youtube.com/watch?v=${url}`} width="100%" playing={false} />
+                </div>
                 <div className='heartContainer'>
 
                     <img className='heart' src={display} onClick={toggleFavoriteHandler} />

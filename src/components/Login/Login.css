@@ -95,7 +95,7 @@
 }
 
 .connect {
-  font-size: 1.2em;
+  font-size: 1em;
   color: rgb(170, 126, 166);
 }
 
@@ -105,8 +105,10 @@
 }
 
 .logOut {
-  font-size: 1.2em;
+  font-size: 1em;
   color: aqua;
+  flex-wrap: wrap;
+  overflow-x: auto;
 }
 .logOut:hover {
   color: brown;

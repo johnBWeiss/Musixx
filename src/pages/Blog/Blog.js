@@ -6,7 +6,7 @@ import eye from "../../images/eye.png"
 
 function Blog() {
     return <div className="BlogWrapper"><Header />
-        <h1 id="h">PLease give me a job as a React developer, so I can make you some awesome Apps</h1>
+        <h3 id="h">PLease give me a job as a React developer, so I can make you some awesome Apps</h3>
         <img className="eye" src={eye} alt="eye" />
 
     </div>
