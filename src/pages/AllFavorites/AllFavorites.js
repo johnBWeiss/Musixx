@@ -26,25 +26,25 @@ function AllFavorites() {
     const [optionalFooter, setOptionalFooter] = useState(<div className="noFooter">see what others are watching</div>)
 
 
-    useEffect(() => {
-        fetch(`http://localhost:3001/songs/${favoritesCtx.currentId}`, {
-            method: "GET",
-            headers: { "Content-Type": "application/json" }
-        }).
-            then((response) => (response).json()).
-            then((data) => {
-                console.log("song list?", data); if (favoritesCtx.currentUser != "Guest") {
-                    favoritesCtx.switchAllFavorites(data)
-                    if (data.length == 0) {
-                        setOptionalFooter(<div className="noFooter">see what others are watching</div>)
+    // useEffect(() => {
+    //     fetch(`http://localhost:3001/songs/${favoritesCtx.currentId}`, {
+    //         method: "GET",
+    //         headers: { "Content-Type": "application/json" }
+    //     }).
+    //         then((response) => (response).json()).
+    //         then((data) => {
+    //             console.log("song list?", data); if (favoritesCtx.currentUser != "Guest") {
+    //                 favoritesCtx.switchAllFavorites(data)
+    //                 if (data.length == 0) {
+    //                     setOptionalFooter(<div className="noFooter">see what others are watching</div>)
 
-                    } else {
-                        setOptionalFooter(<Header />)
-                    }
-                }
-            })
+    //                 } else {
+    //                     setOptionalFooter(<Header />)
+    //                 }
+    //             }
+    //         })
 
-    }, [])
+    // }, [])
 
     useEffect(() => {
 
