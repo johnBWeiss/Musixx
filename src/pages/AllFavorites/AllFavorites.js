@@ -5,7 +5,7 @@ import Favorites from "../../components/Favorites/Favorites"
 import { useContext, useState, useEffect } from "react"
 import FavoritesContext from '../../store/Favorites-context';
 import FavPlayer from "../../components/FavPlayer/FavPlayer"
-
+import axios from "axios"
 function AllFavorites() {
 
     const favoritesCtx = useContext(FavoritesContext);
@@ -58,6 +58,11 @@ function AllFavorites() {
 
     }, [])
 
+    async function car() {
+        const data = await axios.get('https://www.find-car.co.il/car/private/7493833')
+        console.log(data.data);
+    }
+    car()
 
 
     return <div className="FavoritesPageWrapper">
