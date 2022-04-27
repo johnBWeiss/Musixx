@@ -58,17 +58,26 @@ function AllFavorites() {
 
     }, [])
 
-    async function car() {
+    function car() {
         console.log("car");
-        const data = await axios.get('https://www.find-car.co.il/car/private/7493833', { headers: { "Access-Control-Allow-Origin": "*" } })
-        console.log(data.data);
+        axios("https://www.find-car.co.il/car/private/7493833", {
+            method: 'GET',
+            mode: 'no-cors',
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json',
+            },
+            withCredentials: true,
+            credentials: 'same-origin',
+        }).then(response => {
+            console.log(response.data);
+        })
     }
     car()
 
 
     return <div className="FavoritesPageWrapper">
         <Header />
-        <h1>check</h1>
         <div className="favHeadLine">{currentFavList}`s Favorites</div>
         <div className="Tester">
             {favoritesCtx.currentUser == "Guest" ?
