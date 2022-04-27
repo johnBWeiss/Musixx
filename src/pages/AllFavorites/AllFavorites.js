@@ -68,6 +68,7 @@ function AllFavorites() {
 
     return <div className="FavoritesPageWrapper">
         <Header />
+        <h1>test</h1>
         <div className="favHeadLine">{currentFavList}`s Favorites</div>
         <div className="Tester">
             {favoritesCtx.currentUser == "Guest" ?
