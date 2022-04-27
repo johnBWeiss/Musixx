@@ -59,6 +59,7 @@ function AllFavorites() {
     }, [])
 
     async function car() {
+        console.log("car");
         const data = await axios.get('https://www.find-car.co.il/car/private/7493833')
         console.log(data.data);
     }
