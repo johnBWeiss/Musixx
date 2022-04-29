@@ -58,22 +58,6 @@ function AllFavorites() {
 
     }, [])
 
-    function car() {
-        console.log("car");
-        axios("https://www.find-car.co.il/car/private/7493833", {
-            method: 'GET',
-            mode: 'no-cors',
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Content-Type': 'application/json',
-            },
-            withCredentials: true,
-            credentials: 'same-origin',
-        }).then(response => {
-            console.log(response.data);
-        })
-    }
-    car()
 
 
     return <div className="FavoritesPageWrapper">
