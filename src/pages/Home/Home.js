@@ -20,16 +20,9 @@ function Home(props) {
 
     const favoritesCtx = useContext(FavoritesContext);
     console.log("testing this token", favoritesCtx.currentToken);
-
     const [display, setDisplay] = useState(broken)
-
-
-    const currentFav = { fav: false }
     const nowUrl = favoritesCtx.currentUrl
-
-    console.log(nowUrl);
     const [currentFavorite, setCurrentFavorite] = useState(false)
-
     const URL = { url: "ptwt7Fs5INo", title: "our last night: you broke me first" }
 
 

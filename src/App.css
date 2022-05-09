@@ -6,7 +6,6 @@
   src: local("Crowd"), url("./components/fonts/Crowd.ttf") format("truetype");
 }
 .wrapper {
-  /* background-image: url("./images/backGround.png"); */
   padding: 5%;
   margin-top: -1.99%;
   margin-bottom: 20%;
@@ -28,16 +27,11 @@ form {
   flex-direction: column;
   width: 68%;
   height: 170vh;
-
-  /* margin-left: 30%; */
-  /* background-image: url("./images/notes-music-sound-treble-clef-wallpaper-preview.jpg"); */
   border-radius: 9%;
   margin-top: 7%;
   margin-left: auto;
   margin-right: auto;
-  /* margin-left: 25%; */
   box-shadow: rgb(105, 97, 97);
-  /* background-image: url("./images/backGround.png"); */
 }
 
 .heartContainer {
@@ -65,15 +59,11 @@ form {
 }
 
 .heart:hover {
-  /* color: rgb(182, 36, 36); */
-  /* cursor: grab; */
-  /* transform: scale(103%); */
   transition: 30s;
 }
 
 .heartCluster:hover {
   cursor: grab;
-  /* transform: rotate(360deg); */
   transition: 1s;
 }
 
@@ -132,7 +122,6 @@ form {
 
 h1 {
   color: rgb(0, 0, 0);
-  /* margin: 5vw; */
   font-size: 5vw;
 }
 

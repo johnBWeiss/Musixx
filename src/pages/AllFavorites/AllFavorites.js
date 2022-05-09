@@ -1,11 +1,8 @@
 import "./AllFavorites.css"
 import Header from "../../components/Header/Header"
-import Player from "../../components/Player/Player"
-import Favorites from "../../components/Favorites/Favorites"
 import { useContext, useState, useEffect } from "react"
 import FavoritesContext from '../../store/Favorites-context';
 import FavPlayer from "../../components/FavPlayer/FavPlayer"
-import axios from "axios"
 function AllFavorites() {
 
     const favoritesCtx = useContext(FavoritesContext);
@@ -26,28 +23,8 @@ function AllFavorites() {
     const [optionalFooter, setOptionalFooter] = useState(<div className="noFooter">see what others are watching</div>)
 
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:3001/songs/${favoritesCtx.currentId}`, {
-    //         method: "GET",
-    //         headers: { "Content-Type": "application/json" }
-    //     }).
-    //         then((response) => (response).json()).
-    //         then((data) => {
-    //             console.log("song list?", data); if (favoritesCtx.currentUser != "Guest") {
-    //                 favoritesCtx.switchAllFavorites(data)
-    //                 if (data.length == 0) {
-    //                     setOptionalFooter(<div className="noFooter">see what others are watching</div>)
-
-    //                 } else {
-    //                     setOptionalFooter(<Header />)
-    //                 }
-    //             }
-    //         })
-
-    // }, [])
 
     useEffect(() => {
-
 
         if (favoritesCtx.favorites.length == 0) {
             setOptionalFooter(<div className="noFooter">see what others are watching</div>)

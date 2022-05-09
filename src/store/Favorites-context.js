@@ -3,25 +3,13 @@ import { createContext, useState } from "react";
 let tokeParsed = localStorage.getItem("accessToken")
     ;
 
-
 if (tokeParsed === null || JSON.parse(tokeParsed).message == "Invalid credentials") {
     localStorage.setItem("accessToken", JSON.stringify([{ accessToken: 0 }, { username: "Guest", _id: 0 }]))
     tokeParsed = localStorage.getItem("accessToken")
-
-
 }
+
 tokeParsed = localStorage.getItem("accessToken")
-
 tokeParsed = JSON.parse(tokeParsed)
-
-
-
-
-
-console.log(tokeParsed);
-// console.log(tokeParsed[0].accessToken);
-// console.log(tokeParsed[1].username);
-
 
 const FavoritesContext = createContext({
     favorites: [],
@@ -106,7 +94,6 @@ export function FavoritesContextProvider(props) {
 
     return <FavoritesContext.Provider value={context}>
         {props.children}
-
     </FavoritesContext.Provider>
 }
 
